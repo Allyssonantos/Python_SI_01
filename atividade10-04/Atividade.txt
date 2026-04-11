@@ -84,19 +84,66 @@ print("O fatorial de", num, "é:", fatorial)
 
 13. Conte quantos números pares existem entre 1 e 50.
 
+contador_pares = 0
+for num in range(1, 51):
+    if num % 2 == 0:
+        contador_pares += 1
+print("Existem", contador_pares, "números pares entre 1 e 50.")
+
 14. Leia uma palavra e verifique se é palíndromo.
+
+palavra = input("Digite uma palavra: ")
+if palavra == palavra[::-1]:
+    print("A palavra é um palíndromo.")
+else:
+    print("A palavra não é um palíndromo.")
 
 15. Leia um número e imprima sua tabuada usando for.
 
+num = int(input("Digite um número inteiro: "))
+print("Tabuada de", num)
+for i in range(1, 11):
+    print(num, "x", i, "=", num * i)
+
 16. Leia uma string e mostre os 3 primeiros caracteres.
+
+string = input("Digite uma string: ")
+if len(string) >= 3:
+    print("Os 3 primeiros caracteres são:", string[:3])
+else:
+    print("A string tem menos de 3 caracteres.")
 
 17. Leia uma string e substitua espaços por hífen.
 
+string = input("Digite uma string: ")
+string_modificada = string.replace(" ", "-")
+print("String modificada:", string_modificada)
+
 18. Leia uma string e conte vogais usando for e if.
+
+string = input("Digite uma string: ")
+contador_vogais = 0
+for char in string:
+    if char.lower() in 'aeiou':
+        contador_vogais += 1
+print("A string contém", contador_vogais, "vogais.")
 
 19. Leia uma string e verifique se ela contém apenas letras (sem números ou símbolos).
 
+string = input("Digite uma string: ")
+if string.isalpha():
+    print("A string contém apenas letras.")
+else:
+    print("A string contém caracteres que não são letras.")
+
 20. Leia uma string e conte quantas letras maiúsculas existem.
+
+string = input("Digite uma string: ")
+contador_maiusculas = 0
+for char in string:
+    if char.isupper():
+        contador_maiusculas += 1
+print("A string contém", contador_maiusculas, "letras maiúsculas.")
 
 21. Leia uma string e substitua todas as vogais por "*", usando laço.
 
