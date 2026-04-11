@@ -1,0 +1,103 @@
+1. Leia um número inteiro e informe se é positivo, negativo ou zero.
+
+num = int(input("Digite um número inteiro: "))
+if num > 0:
+    print("O número é positivo.")
+elif num < 0:
+    print("O número é negativo.")
+else:
+    print("O número é zero.")
+
+2. Leia um número e verifique se é par ou ímpar.
+
+num = int(input("Digite um número interiro: "))
+
+if num %  2 == 0: #verifica se o número é par, se o resto da divisão por 2 for igual a zero, o número é par.
+    print("o número é par.")
+else: #se o número não for par, ele é ímpar.
+    print("o número é ímpar.")
+
+3. Leia uma string e mostre o primeiro e último caractere.
+
+4. Leia uma palavra e mostre ela invertida.
+
+palavra = input("Digite uma palavra: ")
+palavra_invertida = palavra[::-1] #inverte a string usando slicing, onde [::-1] significa que a string deve ser lida do início ao fim, mas com um passo de -1, ou seja, de trás para frente.
+print("A palavra invertida é:", palavra_invertida)
+
+5. Leia uma idade e informe se é maior de idade.
+
+idade = int(input("Digite a idade: "))
+if idade >= 18: 
+    print("Você é maior de idade.")
+else:
+    print("Você é menor de idade.")
+
+6. Leia dois números e informe o maior.
+
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+if num1 > num2:
+    print("O maior número é:", num1)
+elif num2 > num1:
+    print("O maior número é:", num2)
+else:
+    print("Os números são iguais.")
+    
+7. Leia uma string e conte quantas letras ‘a’ existem.
+
+string = input("Digite uma string: ")
+contador_a = string.count('a') 
+print("A letra 'a' aparece", contador_a, "vezes na string.")
+
+8. Leia uma palavra e verifique se começa com vogal.
+
+palavra = input("Digite uma palavra: ")
+if palavra[0].lower() in 'aeiou': 
+    print("A palavra começa com uma vogal.")
+else:
+    print("A palavra não começa com uma vogal.")
+
+9. Use while para imprimir números de 1 a 10. 
+
+contador = 1
+while contador <= 10:
+    print(contador)
+    contador += 1 
+
+10. Use for para imprimir números de 1 a 10.
+
+for i in range(1, 11):
+    print(i)
+
+11. Leia um número e calcule o fatorial usando while.
+
+num = int(input("Digite um número inteiro: "))
+fatorial = 1
+contador = 1
+while contador <= num:
+    fatorial *= contador 
+    contador += 1
+print("O fatorial de", num, "é:", fatorial)
+
+12. Leia uma string e imprima cada caractere com for.
+
+13. Conte quantos números pares existem entre 1 e 50.
+
+14. Leia uma palavra e verifique se é palíndromo.
+
+15. Leia um número e imprima sua tabuada usando for.
+
+16. Leia uma string e mostre os 3 primeiros caracteres.
+
+17. Leia uma string e substitua espaços por hífen.
+
+18. Leia uma string e conte vogais usando for e if.
+
+19. Leia uma string e verifique se ela contém apenas letras (sem números ou símbolos).
+
+20. Leia uma string e conte quantas letras maiúsculas existem.
+
+21. Leia uma string e substitua todas as vogais por "*", usando laço.
+
+22. Leia uma string e verifique se ela é um palíndromo ignorando maiúsculas/minúsculas e espaços.

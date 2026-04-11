@@ -1,0 +1,1 @@
+#Leia uma string e imprima cada caractere com for.
