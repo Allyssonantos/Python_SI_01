@@ -11,6 +11,8 @@ lista = [
     input('CPF: ')
 ]
 
+print()
+
 print("Nome:", lista[0])
 print("Endereço:", lista[1])
 print("Celular:", lista[2])
