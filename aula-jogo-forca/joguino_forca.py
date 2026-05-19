@@ -1,16 +1,20 @@
 import random
 
-frutas = [
-    "abacaxi", "abacate", "acerola", "ameixa", "amora",
-    "banana", "caju", "carambola", "cereja", "coco",
-    "damasco", "figo", "framboesa", "goiaba", "graviola",
-    "jabuticaba", "jaca", "kiwi", "laranja", "limão",
-    "maçã", "mamão", "manga", "maracujá", "melancia",
-    "melão", "morango", "nectarina", "pera", "pêssego",
-    "pitanga", "pitaya", "romã", "tangerina", "uva",
-    "umbu", "cabeludinha", "physalis", "cupuaçu", "bacaba",
-    "buriti", "cajá", "cambuci", "seriguela", "taperebá",
-    "uvaia", "pequi", "jenipapo", "murici", "araticum"]
+
+def sortear_frutas():
+arquivo = open("frutas.txt", "r", encoding="utf-8")
+
+linhas = arquivo.readlines()  #ler todas as linhas do arquivo e armazenar em uma lista
+arquivo.close()               #fechar o arquivo
+ 
+frutas = []
+
+for linha in linhas:
+    fruta = linha.strip()  #remover os espaços em branco do início e do fim da linha
+    if fruta != "":  #verificar se a linha não está vazia
+        frutas.append(fruta)  #adicionar a fruta à lista de frutas
+
+fruta_sorteada = random.choice(frutas)  #sortear uma fruta da lista
 
 
 def boneco(erro):
