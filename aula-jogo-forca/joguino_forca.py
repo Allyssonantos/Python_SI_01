@@ -2,19 +2,16 @@ import random
 
 
 def sortear_frutas():
-arquivo = open("frutas.txt", "r", encoding="utf-8")
+    with open("frutas.txt", "r", encoding="utf-8") as arquivo:
+        linhas = arquivo.readlines()  # ler todas as linhas do arquivo e armazenar em uma lista
 
-linhas = arquivo.readlines()  #ler todas as linhas do arquivo e armazenar em uma lista
-arquivo.close()               #fechar o arquivo
- 
-frutas = []
+    frutas = []
+    for linha in linhas:
+        fruta = linha.strip()  # remover os espaços em branco do início e do fim da linha
+        if fruta != "":  # verificar se a linha não está vazia
+            frutas.append(fruta)  # adicionar a fruta à lista de frutas
 
-for linha in linhas:
-    fruta = linha.strip()  #remover os espaços em branco do início e do fim da linha
-    if fruta != "":  #verificar se a linha não está vazia
-        frutas.append(fruta)  #adicionar a fruta à lista de frutas
-
-fruta_sorteada = random.choice(frutas)  #sortear uma fruta da lista
+    return random.choice(frutas)  # sortear uma fruta da lista
 
 
 def boneco(erro):
@@ -84,7 +81,7 @@ def painel(l):
     print()
 
 acertou = False
-palavra = random.choice(frutas).upper()
+palavra = sortear_frutas().upper()
 linha = list("_" * len(palavra))
 usadas = ""
 err = 0
