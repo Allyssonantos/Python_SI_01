@@ -1,6 +1,10 @@
 nome = input("Nome: ")
 idade = input("Idade: ")
 
-arquivo = open("cadastro.txt", "w")
+arquivo = open("aula26-05/cadastro.txt", "a")
 arquivo.write(nome + "\n")
-arquivo.writw(idade)
+arquivo.write(idade + "\n")
+
+arquivo.close()
+
+
