@@ -1,8 +1,11 @@
+import os
 import random
 
 
 def sortear_frutas():
-    with open("frutas.txt", "r", encoding="utf-8") as arquivo:
+    script_dir = os.path.dirname(__file__)
+    caminho_frutas = os.path.join(script_dir, "frutas.txt")
+    with open(caminho_frutas, "r", encoding="utf-8") as arquivo:
         linhas = arquivo.readlines()  # ler todas as linhas do arquivo e armazenar em uma lista
 
     frutas = []
@@ -36,33 +39,33 @@ def boneco(erro):
     elif (erro == 3):
         print(" ______")
         print("|/   ( O ) ")  
-        print("|     \|   ")
+        print("|     \\|   ")
         print("|      |   ")
         print("|          ")
     elif (erro == 4):
         print(" ______")
         print("|/   ( O ) ")   
-        print("|     \|/  ")
+        print("|     \\|/  ")
         print("|      |   ")
         print("|          ")
     elif (erro == 5):
         print(" ______")
         print("|/   ( O ) ")   
-        print("|     \|/  ")
+        print("|     \\|/  ")
         print("|      |   ")
         print("|     /    ")
     elif (erro == 6):
         print(" ______")
         print("|/   ( O ) ")   
-        print("|     \|/  ")
+        print("|     \\|/  ")
         print("|      |   ")
-        print("|     / \  ")
+        print("|     / \\  ")
     elif (erro == 7):
         print(" ______")
         print("|/    (+)  Você foi enforcado")   
-        print("|     \|/  Tente novamente!!!")
+        print("|     \\|/  Tente novamente!!!")
         print("|      |   ")
-        print("|     / \  ")
+        print("|     / \\  ")
     elif (erro == 8):
         print("      XX      Parabens!!")
         print("     XXXX     Você conseguiu.")
