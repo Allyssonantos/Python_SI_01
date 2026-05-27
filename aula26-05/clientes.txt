@@ -1,0 +1,10 @@
+Cód: 1
+Nome: asdasdda
+Telefone: asdasdasdsd
+E-mail: asdasdsads
+Cidade: asdasdasd
+Estado: asdasdsd
+CPF/CNPJ: asdasdads
+Tipo: asdasds
+Data de Cadastro: asdasd
+------------------------------
