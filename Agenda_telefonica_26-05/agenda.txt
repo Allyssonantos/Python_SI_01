@@ -1,0 +1,34 @@
+Allysson
+Rua america
+7123123123
+123123
+Nome: Allysson
+Endereço: Rua
+Telefone: 34123123
+Data de Nascimento: 132123
+------------------------------
+Nome: 123123123
+Endereço: 123123
+Telefone: 1231232
+Data de Nascimento: 12312
+------------------------------
+Nome: fim
+Endereço: ffim
+Telefone: fim
+Data de Nascimento: FIM]
+------------------------------
+Nome: 
+Endereço: FIM
+Telefone: FIM
+Data de Nascimento: FIM
+------------------------------
+Nome: FIM
+Endereço: & C:/Users/allys/AppData/Local/Programs/Python/Python312/python.exe "g:/Meu Drive/IF/Sistema de Informação/Logica de Programação/Python_SI_01/Agenda_telefonica_26-05/Agenda-Telefonica.py"
+Telefone: fIM
+Data de Nascimento: FIM
+------------------------------
+Nome: ALLYSSON
+Endereço: FIM
+Telefone: 12312
+Data de Nascimento: 123123
+------------------------------
