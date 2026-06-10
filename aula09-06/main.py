@@ -1,25 +1,33 @@
 import os
 import cadastro
 import consulta
+import exclusao
+
 
 def menu():
     while True:
-        os.system("clear")
-        print("\n1 - Cadastrar Cliente")
+        os.system("cls" if os.name == "nt" else "clear")
+        print("\n== SISTEMA DE CLIENTES ==")
+        print("1 - Cadastrar Cliente")
         print("2 - Consultar Cliente")
-        print("3 - Sair")
+        print("3 - Excluir Cliente")
+        print("4 - Sair")
 
-        opcao = input("Escolha uma opção: ").split()
+        opcao = input("\nEscolha uma opção: ").strip()
 
-        if opcao[0] == "1":
+        if opcao == "1":
             cadastro.cadastrar()
-        elif opcao[0] == "2":
+        elif opcao == "2":
             consulta.consultar()
-        elif opcao[0] == "3":
+        elif opcao == "3":
+            exclusao.excluir()
+        elif opcao == "4":
             print("Saindo do programa...")
+            break
         else:
             print("Opção inválida. Tente novamente.")
-            
-            
+            input("Pressione Enter para continuar...")
+
+
 if __name__ == "__main__":
     menu()

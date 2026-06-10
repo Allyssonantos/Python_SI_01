@@ -1,0 +1,1 @@
+{'codigo': 'CLI20260609221514', 'nome': 'Allysson', 'cpf': '12312321332', 'telefone': '123123123', 'email': '123@gmail.com', 'endereco': 'qweqe', 'cidade': 'qweqwe', 'estado': '2312312'}
