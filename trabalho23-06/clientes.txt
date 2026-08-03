@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "nome": "Allysson",
+    "cidade": "Posse",
+    "estado": "GO",
+    "tipo": "F",
+    "cpf_cnpj": "1231231232",
+    "data_cadastro": "03/08/2026 22:29"
+  }
+]
