@@ -22,33 +22,22 @@ def _carregar_clientes():
     return []
 
 
+def listar_todos():
+    return _carregar_clientes()
+
+
 def consultar_gui(cpf):
     cpf = (cpf or "").strip()
     clientes = _carregar_clientes()
 
     if not cpf:
-        if not clientes:
-            return "Nenhum cliente cadastrado."
-
-        lista = []
-        for cliente in clientes:
-            lista.append(
-                f"Nome: {cliente.get('nome')} | CPF: {cliente.get('cpf')} | "
-                f"Cidade: {cliente.get('cidade')} | Estado: {cliente.get('estado')}"
-            )
-        return "\n".join(lista)
+        return clientes
 
     for cliente in clientes:
         if cliente.get("cpf") == cpf:
-            return (
-                f"Cliente encontrado:\n"
-                f"Nome: {cliente.get('nome')}\n"
-                f"CPF: {cliente.get('cpf')}\n"
-                f"Cidade: {cliente.get('cidade')}\n"
-                f"Estado: {cliente.get('estado')}"
-            )
+            return cliente
 
-    return "Cliente não encontrado."
+    return None
 
 
 def consultar():
