@@ -8,6 +8,39 @@ import consulta
 import alteracao
 import exclusao
 
+
+def configurar_estilo(root):
+    estilo = ttk.Style(root)
+    estilo.theme_use("clam")
+
+    estilo.configure("TFrame", background="#f4f7f9")
+    estilo.configure("TLabel", background="#f4f7f9", foreground="#23313d", font=("Segoe UI", 10))
+    estilo.configure("Title.TLabel", background="#123447", foreground="#ffffff", font=("Segoe UI", 20, "bold"))
+    estilo.configure("Subtitle.TLabel", background="#123447", foreground="#c9e5e8", font=("Segoe UI", 10))
+    estilo.configure("Menu.TFrame", background="#123447")
+    estilo.configure("MenuTitle.TLabel", background="#123447", foreground="#ffffff", font=("Segoe UI", 18, "bold"))
+    estilo.configure("MenuSubtitle.TLabel", background="#123447", foreground="#c9e5e8", font=("Segoe UI", 10))
+    estilo.configure(
+        "TButton",
+        background="#1d8291",
+        foreground="#ffffff",
+        font=("Segoe UI", 10, "bold"),
+        padding=(12, 8),
+        borderwidth=0,
+    )
+    estilo.map("TButton", background=[("active", "#166875"), ("pressed", "#0f5360")])
+    estilo.configure("Secondary.TButton", background="#dbe7eb", foreground="#23313d")
+    estilo.map("Secondary.TButton", background=[("active", "#c5d8de")])
+    estilo.configure("Danger.TButton", background="#c94c4c", foreground="#ffffff")
+    estilo.map("Danger.TButton", background=[("active", "#a83b3b"), ("pressed", "#8e3030")])
+    estilo.configure("Treeview", background="#ffffff", fieldbackground="#ffffff", foreground="#23313d", rowheight=28)
+    estilo.configure("Treeview.Heading", background="#1d8291", foreground="#ffffff", font=("Segoe UI", 10, "bold"))
+    estilo.map("Treeview", background=[("selected", "#b9e1e5")], foreground=[("selected", "#123447")])
+    estilo.configure("TEntry", padding=7, fieldbackground="#ffffff")
+    estilo.configure("TLabelframe", background="#f4f7f9", foreground="#123447")
+    estilo.configure("TLabelframe.Label", background="#f4f7f9", foreground="#123447", font=("Segoe UI", 10, "bold"))
+
+
 def _criar_tree_clientes(frame, height=10):
     container = ttk.Frame(frame)
     tree = ttk.Treeview(
@@ -59,12 +92,13 @@ def _popular_tree_clientes(tree, clientes):
 def abrir_cadastro(root):
     janela = Toplevel(root)
     janela.title("Cadastro")
-    janela.geometry("320x280")
+    janela.geometry("420x360")
+    janela.resizable(False, False)
 
     frame = ttk.Frame(janela, padding=20)
     frame.pack(fill="both", expand=True)
 
-    ttk.Label(frame, text="Cadastro de Cliente").pack(pady=8)
+    ttk.Label(frame, text="Cadastro de Cliente", style="Title.TLabel", anchor="center").pack(fill="x", pady=(0, 16), ipady=10)
     nome = StringVar()
     cpf = StringVar()
     cidade = StringVar()
@@ -87,13 +121,16 @@ def abrir_cadastro(root):
         except Exception as exc:
             showerror("Erro", f"Erro ao cadastrar: {exc}")
 
-    ttk.Button(frame, text="Salvar", command=salvar).pack(pady=10)
+    botoes = ttk.Frame(frame)
+    botoes.pack(fill="x", pady=(8, 0))
+    ttk.Button(botoes, text="Salvar cliente", command=salvar).pack(side="left", padx=(0, 8))
+    ttk.Button(botoes, text="Cancelar", style="Secondary.TButton", command=janela.destroy).pack(side="left")
 
 
 def abrir_consulta(root):
     janela = Toplevel(root)
     janela.title("Consulta")
-    janela.geometry("700x360")
+    janela.geometry("760x460")
 
     frame = ttk.Frame(janela, padding=20)
     frame.pack(fill="both", expand=True)
@@ -127,8 +164,8 @@ def abrir_consulta(root):
             showerror("Erro", f"Erro ao consultar: {exc}")
 
     ttk.Button(frame, text="Consultar", command=buscar).pack(side="left", padx=(0, 10))
-    ttk.Button(frame, text="Listar todos", command=carregar_tabela).pack(side="left", padx=(0, 10))
-    ttk.Button(frame, text="Limpar filtro", command=lambda: (cpf.set(""), carregar_tabela())).pack(side="left")
+    ttk.Button(frame, text="Listar todos", style="Secondary.TButton", command=carregar_tabela).pack(side="left", padx=(0, 10))
+    ttk.Button(frame, text="Limpar filtro", style="Secondary.TButton", command=lambda: (cpf.set(""), carregar_tabela())).pack(side="left")
 
 
 def abrir_alteracao(root):
@@ -221,25 +258,31 @@ def abrir_exclusao(root):
         except Exception as exc:
             showerror("Erro", f"Erro ao excluir: {exc}")
 
-    ttk.Button(frame, text="Excluir", command=remover).pack()
+    ttk.Button(frame, text="Excluir cliente", style="Danger.TButton", command=remover).pack()
     carregar_tabela()
 
 
 try:
     root = Tk()
+    configurar_estilo(root)
     root.title("Sistema de Clientes")
-    root.geometry("420x300")
+    root.geometry("480x430")
+    root.resizable(False, False)
 
-    frame = ttk.Frame(root, padding=20)
+    frame = ttk.Frame(root, padding=28)
     frame.pack(fill="both", expand=True)
 
-    ttk.Label(frame, text="== SISTEMA DE CLIENTES ==", font=("Arial", 12, "bold")).pack(pady=(0, 12))
+    cabecalho = ttk.Frame(frame, style="Menu.TFrame", padding=(20, 18))
+    cabecalho.pack(fill="x", pady=(0, 24))
+    ttk.Label(cabecalho, text="Sistema de Clientes", style="MenuTitle.TLabel").pack()
+    ttk.Label(cabecalho, text="Gerencie seus clientes com praticidade", style="MenuSubtitle.TLabel").pack(pady=(5, 0))
 
-    ttk.Button(frame, text="Cadastrar Cliente", width=24, command=lambda: abrir_cadastro(root)).pack(pady=4)
-    ttk.Button(frame, text="Consultar Cliente", width=24, command=lambda: abrir_consulta(root)).pack(pady=4)
-    ttk.Button(frame, text="Alterar Cliente", width=24, command=lambda: abrir_alteracao(root)).pack(pady=4)
-    ttk.Button(frame, text="Excluir Cliente", width=24, command=lambda: abrir_exclusao(root)).pack(pady=4)
-    ttk.Button(frame, text="Sair", width=24, command=root.destroy).pack(pady=(8, 0))
+    ttk.Label(frame, text="Escolha uma operação", font=("Segoe UI", 11, "bold")).pack(pady=(0, 10))
+    ttk.Button(frame, text="Cadastrar cliente", width=28, command=lambda: abrir_cadastro(root)).pack(pady=5)
+    ttk.Button(frame, text="Consultar clientes", width=28, command=lambda: abrir_consulta(root)).pack(pady=5)
+    ttk.Button(frame, text="Alterar cliente", width=28, command=lambda: abrir_alteracao(root)).pack(pady=5)
+    ttk.Button(frame, text="Excluir cliente", style="Danger.TButton", width=28, command=lambda: abrir_exclusao(root)).pack(pady=5)
+    ttk.Button(frame, text="Sair", style="Secondary.TButton", width=28, command=root.destroy).pack(pady=(16, 0))
 
     root.mainloop()
 except TclError:
