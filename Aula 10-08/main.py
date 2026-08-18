@@ -7,6 +7,16 @@ import consulta
 import alteracao
 import exclusao
 
+def salvar():
+    nome.delete(0, tk.END)
+    telefone.delete(0, tk.END)
+    email.delete(0, tk.END)
+    cidade.delete(0, tk.END)
+    estado.delete(0, tk.END)
+    tipo.delete(0, tk.END)
+    documento.delete(0, tk.END)
+    nome.focus()
+
 
 tk.Label (frame_form, text="Tipo (CNPJ ou CPF):").pack(pady = 2)
 tipo = tk.Entry (frame_form, width=30)
