@@ -2,6 +2,10 @@ from tkinter import Tk, Toplevel, ttk, StringVar
 from tkinter import TclError
 from tkinter.messagebox import showinfo, showerror
 
+import cadastro
+import consulta
+import alteracao
+import exclusao
 
 def salvar():
     nome.delete(0, tk.END)
