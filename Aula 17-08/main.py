@@ -17,11 +17,29 @@ def salvar():
     documento.delete(0, tk.END)
     nome.focus()
 
+tk.Label (frame_form, text="Nome:").pack(pady = 2)
+nome = tk.Entry (frame_form, width=30)
+nome.pack(pady = 2)
+
+tk.Label (frame_form, text="Telefone:").pack(pady = 2)
+telefone = tk.Entry (frame_form, width=30)
+telefone.pack(pady = 2)
+
+tk.Label (frame_form, text="Email:").pack(pady = 2)
+email = tk.Entry (frame_form, width=30)
+email.pack(pady = 2)
+
+tk.Label (frame_form, text="Cidade:").pack(pady = 2)
+cidade = tk.Entry (frame_form, width=30)
+cidade.pack(pady = 2)
+
+tk.Label (frame_form, text="Estado:").pack(pady = 2)
+estado = tk.Entry (frame_form, width=30)
+estado.pack(pady = 2)
 
 tk.Label (frame_form, text="Tipo (CNPJ ou CPF):").pack(pady = 2)
 tipo = tk.Entry (frame_form, width=30)
 tipo.pack(pady = 2)
-
 
 tk.Label (frame_form, text="Documento:").pack(pady = 2)
 documento = tk.Entry (frame_form, width=30)
