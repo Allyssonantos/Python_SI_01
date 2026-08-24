@@ -23,6 +23,7 @@ Repositório de estudos da disciplina **Lógica de Programação**, do curso de 
 | Agenda telefônica | Entrada de dados e persistência em arquivo `.txt` | [aula26-05/Agenda-Telefonica.py](aula26-05/Agenda-Telefonica.py) |
 | Cadastro de clientes no terminal | Modularização e CRUD com arquivos de texto | [trabalho23-06/main.py](trabalho23-06/main.py) |
 | Cadastro de clientes com interface gráfica | Tkinter, tabelas e integração entre módulos | [Aula03-08-CadastroClientes/main.py](Aula03-08-CadastroClientes/main.py) |
+| Cadastro de clientes (Tkinter avançado) | Interface gráfica com múltiplas janelas, CRUD completo e persistência JSON | [Aula 10-08/main.py](Aula%2010-08/main.py) |
 
 ## Conteúdo por aula
 
@@ -40,6 +41,7 @@ Repositório de estudos da disciplina **Lógica de Programação**, do curso de 
 | [Aula03_08](Aula03_08) | Primeiros exemplos de interface gráfica com Tkinter |
 | [Aula03-08-CadastroClientes](Aula03-08-CadastroClientes) | Sistema gráfico de cadastro, consulta, alteração e exclusão |
 | [Aula 07-04](Aula%2007-04) | Evolução do jogo de adivinhação |
+| [Aula 10-08](Aula%2010-08) | Sistema de cadastro de clientes com Tkinter e integração de módulos |
 
 ## Como executar
 
