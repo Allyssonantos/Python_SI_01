@@ -1,11 +1,11 @@
-from tkinter import Tk, Toplevel, ttk, StringVar
-from tkinter import TclError
-from tkinter.messagebox import showinfo, showerror
+import tkinter as tk
 
-import cadastro
-import consulta
-import alteracao
-import exclusao
+
+janela = tk.Tk()
+janela.title("Cadastro de clientes")
+
+frame_form = tk.Frame(janela)
+frame_form.pack(padx=10, pady=10)
 
 def salvar():
     nome.delete(0, tk.END)
@@ -45,7 +45,7 @@ tk.Label (frame_form, text="Documento:").pack(pady = 2)
 documento = tk.Entry (frame_form, width=30)
 documento.pack(pady = 2)
 
-botao1 = tk.Button (janela, text="Salvar", command=salvar).pack(pady = 15)
+botao1 = tk.Button (janela, text="Salvar", command=salvar)
 botao1.pack(pady = 15)
 
 nome.focus()
@@ -57,3 +57,5 @@ cidade.bind("<Return>", lambda event: estado.focus())
 estado.bind("<Return>", lambda event: tipo.focus())
 tipo.bind("<Return>", lambda event: documento.focus())
 documento.bind("<Return>", lambda event: botao1.focus())
+
+janela.mainloop()
